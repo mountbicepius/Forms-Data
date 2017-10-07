@@ -27,7 +27,7 @@
                   </div>
                 </div>
               </div>
-
+              <div id="output"></div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
@@ -36,26 +36,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>-->
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script type="text/javascript">
-    $('#data_form').submit(function()
-    {
-      /*var data = { email : 'input[name="email"]' ,dateBirth :'input[name="dob"]', phone :'input[name="ph"]', postal : 'input[name="poa"]'};
-      $.post("data.json",data).done(function(data){
-        alert("Thanks for responding will let you know if number reaches ...X");
-      });*/
-      $.ajax({
-       type: 'POST', 
-       dataType: 'json', 
-       url: 'data.json', 
-       data: $(this).serialize(), 
-       success: function(data) { 
-           alert(data.message); 
-       },
-       failure: function (data) {
-           alert('Please try again');
-       }
-    });
-    });
-    </script>
+    <script type="text/javascript" src="~/app.js"></script>
   </body>
 </html>
