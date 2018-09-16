@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Compiled and minified CSS -->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">-->
+
+    <!-- Bootstrap CSS -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">-->
+  </head>
+
+  <body>
+        <!--<div class="row">
+                <div class="col s12 m6">
+                  <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">-->
+
+                     <form id="dataForm">
+                      <table colspan="2" border="5">
+                        <th>
+                            <span>Apply Now and Benefits reaped</span>
+                        </th>
+                        <tr>
+                          <td>
+                            E-Mail
+                          </td>
+                          <td>
+                        <input name="email" type="email" placeholder="Enter E-Mail Address">
+                      </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Date of Birth
+                        </td>
+                        <td>
+                        <input name="dob"  type="date" placeholder="Enter Date of Birth">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                      Phone Number
+                      </td>
+                      <td>
+                        <input name="phone"  type="number" placeholder="Enter Phone Number">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Home Address
+                      </td>
+                      <td>
+                        <input name="addr"  type="text" placeholder="Enter Postal Address">
+                      </td>
+                    </tr>
+                    <tr>
+                      </table>
+                      <input type="submit" value="confirm">
+                  </form>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function()
+    {   $('#dataForm').submit(function(event) {
+        var email= $("input[name=email]").val();
+        var dob=$("input[name=dob]").val();
+        var phone=$("input[name=phone]").val()
+        var addr=$("input[name=addr]").val()
+        var formData = {
+                  'email': email,
+                  'dob': dob,
+                  'phone': phone,
+                  'addr': addr,
+              };
+        $.ajax({
+          url: 'http://localhost:3000/data', // url where to submit the request
+                type : "POST", // type of action POST || GET
+                dataType : 'json', // data type
+                data : JSON.stringify(formData),
+        contentType: 'application/json',// serializes the form's elements.
+         success: function(data)
+         {
+             console.log(formData); // show response from the php script.
+         }
+       });
+       event.preventDefault(); // avoid to execute the actual submit of the form.
+  });
+  });
+    </script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>-->
+    <!-- Compiled and minified JavaScript -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>-->
+
+  </body>
+</html>
